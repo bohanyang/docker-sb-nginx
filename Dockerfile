@@ -8,7 +8,7 @@ RUN deps='apt-transport-https curl gnupg'; \
     apt-get update; \
     apt-get install -y --no-install-recommends ca-certificates gettext-base $deps; \
     curl -fsSL $PACKAGE_REPO/public.key | apt-key add -; \
-    echo "deb $PACKAGE_REPO stretch nginx" > /etc/apt/sources.list.d/sb-nginx.list; \
+    echo "deb $PACKAGE_REPO stretch main" > /etc/apt/sources.list.d/sb-nginx.list; \
     apt-get update; \
     apt-get install -y --no-install-recommends nginx$PACKAGE_VERSION; \
     apt-get purge -y --auto-remove $deps; \
