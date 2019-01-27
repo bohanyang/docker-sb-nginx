@@ -3,7 +3,7 @@ FROM debian:stretch-slim
 ARG PACKAGE_VERSION="=1.15.8-1sb"
 ARG PACKAGE_REPO="https://mirrors.xtom.com/sb/nginx"
 
-RUN deps='apt-transport-https curl gnupg1'; \
+RUN deps='apt-transport-https curl gnupg'; \
     set -ex; \
     apt-get update; \
     apt-get install -y --no-install-recommends ca-certificates gettext-base $deps; \
