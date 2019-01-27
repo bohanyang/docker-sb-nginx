@@ -15,7 +15,7 @@ cp -R "$defaults/." "$nextdir"
 cp -R "$confdir/." "$nextdir"
 ln -sfn "$nextdir" "$destdir"
 
-if ! openresty -t; then
+if ! nginx -t; then
   ln -sfn "$currdir" "$destdir"
   exit 1
 fi
