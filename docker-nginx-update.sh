@@ -13,6 +13,7 @@ mkdir "$nextdir"
 mkdir -p "$confdir"
 cp -R "$defaults/." "$nextdir"
 cp -R "$confdir/." "$nextdir"
+rm -rf "$nextdir/.git" "$nextdir/.vscode"
 ln -sfn "$nextdir" "$destdir"
 
 if ! nginx -t; then
