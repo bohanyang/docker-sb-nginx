@@ -17,6 +17,8 @@ rm -rf "$nextdir/.git" "$nextdir/.vscode"
 ln -sfn "$nextdir" "$destdir"
 
 if ! nginx -t; then
-  ln -sfn "$currdir" "$destdir"
-  exit 1
+  if [ "$currdir" != "$destdir" ]; then
+    ln -sfn "$currdir" "$destdir"
+    exit 1
+  fi
 fi
