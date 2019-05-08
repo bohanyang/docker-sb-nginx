@@ -19,6 +19,6 @@ ln -sfn "$nextdir" "$destdir"
 if ! nginx -t; then
   if [ "$currdir" != "$destdir" ]; then
     ln -sfn "$currdir" "$destdir"
-    exit 1
   fi
+  exit 1
 fi
