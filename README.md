@@ -1,4 +1,6 @@
-# sb-nginx for Docker
+# Docker image for sb-nginx
+
+[![](https://images.microbadger.com/badges/image/bohan/sb-nginx:1.15.12.svg)](https://hub.docker.com/r/bohan/sb-nginx)
 
 ## What's sb-nginx?
 
@@ -14,7 +16,7 @@ Put your config files (`nginx.conf` etc.) inside a folder, for example: `~/nginx
 
 Then `run` the container:
 
-    docker run --name nginx --net host --restart always -v $HOME/nginx-config:/usr/src/docker-nginx/conf:ro -d bohan/sb-nginx
+    docker run --name nginx --net host --restart always -v $HOME/nginx-config:/usr/src/docker-nginx/conf:ro -d bohan/sb-nginx:1.15.12
 
 You **must** mount the config dir to this specific `/usr/src/docker-nginx/conf` path!
 
