@@ -1,6 +1,6 @@
 FROM debian:stretch-slim
 
-ARG PACKAGE_VERSION="=1.17.1-1sb+111b+stretch1"
+ARG PACKAGE_VERSION="=1.17.1-1sb+111c+stretch1"
 ARG PACKAGE_REPO="https://mirrors.xtom.com/sb/nginx"
 
 RUN deps='apt-transport-https gnupg wget'; \
