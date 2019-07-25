@@ -1,6 +1,6 @@
-FROM debian:stretch-slim
+FROM debian:buster-slim
 
-ARG PACKAGE_VERSION="=1.17.1-1sb+111c+stretch1"
+ARG PACKAGE_VERSION="=1.17.2-1sb+111c+buster1"
 ARG PACKAGE_REPO="https://mirrors.xtom.com/sb/nginx"
 
 RUN deps='apt-transport-https gnupg wget'; \
@@ -8,7 +8,7 @@ RUN deps='apt-transport-https gnupg wget'; \
     apt-get update; \
     apt-get install -y --no-install-recommends ca-certificates gettext-base $deps; \
     wget -qO- $PACKAGE_REPO/public.key | apt-key add -; \
-    echo "deb $PACKAGE_REPO stretch main" > /etc/apt/sources.list.d/sb-nginx.list; \
+    echo "deb $PACKAGE_REPO buster main" > /etc/apt/sources.list.d/sb-nginx.list; \
     apt-get update; \
     apt-get install -y --no-install-recommends nginx$PACKAGE_VERSION; \
     apt-get purge -y --auto-remove $deps; \

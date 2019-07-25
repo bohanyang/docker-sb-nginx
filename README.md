@@ -1,12 +1,12 @@
 # Docker image for sb-nginx
 
-[![](https://images.microbadger.com/badges/image/bohan/sb-nginx:1.17.1.svg)](https://hub.docker.com/r/bohan/sb-nginx)
+[![](https://images.microbadger.com/badges/image/bohan/sb-nginx:1.17.2.svg)](https://hub.docker.com/r/bohan/sb-nginx)
 
 ## What's sb-nginx?
 
-[sb-nginx](https://mirrors.xtom.com.hk/sb/nginx/) is a Debian package by [SB Professional Services](https://www.sb/) / [xTom](https://xtom.com/) offering a nginx build supports:
+[sb-nginx](https://mirrors.xtom.com/sb/nginx/) is a Debian package by [SB Professional Services](https://www.sb/) / [xTom](https://xtom.com/) offering a nginx build supports:
 
- * Brotli
+ * Brotli compression
  * OpenSSL 1.1.1 with TLS 1.3 support
  * GeoIP2
 
@@ -16,7 +16,7 @@ Put your config files (`nginx.conf` etc.) inside a folder, for example: `~/nginx
 
 Then `run` the container:
 
-    docker run --name nginx --net host --restart always -v $HOME/nginx-config:/usr/src/docker-nginx/conf:ro -d bohan/sb-nginx:1.17.1
+    docker run --name nginx --net host --restart always -v $HOME/nginx-config:/usr/src/docker-nginx/conf:ro -d bohan/sb-nginx:1.17.2
 
 You **must** mount the config dir to this specific `/usr/src/docker-nginx/conf` path!
 
