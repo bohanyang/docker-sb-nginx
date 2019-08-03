@@ -2,6 +2,11 @@
 
 set -e
 
+test_exists_one()
+{
+  test -e "$1"
+}
+
 destdir="/etc/nginx"
 
 # First Start: "/etc/nginx"
@@ -20,8 +25,12 @@ rm -rf "$nextdir"
 mkdir "$nextdir"
 
 mkdir -p "$confdir"
-cp -R "$defaults"/* "$nextdir"
-cp -R "$confdir"/* "$nextdir"
+cp -R "$defaults/"* "$nextdir"
+
+if test_exists_one "$confdir/"*; then
+  cp -R "$confdir/"* "$nextdir"
+fi
+
 ln -sfn "$nextdir" "$destdir"
 
 if nginx -t; then
