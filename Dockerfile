@@ -1,6 +1,6 @@
 FROM debian:buster-slim
 
-ARG PACKAGE_VERSION="=1.17.3-1sb+111c+buster1"
+ARG PACKAGE_VERSION="=1.17.4-1sb+111d+buster1"
 ARG PACKAGE_REPO="https://mirrors.xtom.com/sb/nginx"
 
 RUN deps='apt-transport-https gnupg wget'; \
