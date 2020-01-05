@@ -1,0 +1,28 @@
+name: Docker Image CI
+
+on:
+  push:
+    tags:
+      - "v*"
+
+env:
+  DOCKER_HUB_USERNAME: bohan
+  DOCKER_IMAGE_REPO: bohan/sb-nginx
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Login
+        run: docker login -u "$DOCKER_HUB_USERNAME" -p "${{ secrets.DOCKER_HUB_PASSWORD }}"
+      - name: Build the Docker image
+        run: docker build . --file Dockerfile --tag "$DOCKER_IMAGE_REPO:latest"
+      - name: Test
+        run: docker run --rm "$DOCKER_IMAGE_REPO:latest" sh -c "nginx -V && nginx -t"
+      - name: Tag
+        run: docker tag "$DOCKER_IMAGE_REPO:latest" "$DOCKER_IMAGE_REPO:${GITHUB_REF##*/v}"
+      - name: Push
+        run: |
+          docker push "$DOCKER_IMAGE_REPO:${GITHUB_REF##*/v}";
+          docker push "$DOCKER_IMAGE_REPO:latest"
