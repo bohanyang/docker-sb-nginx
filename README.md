@@ -1,6 +1,6 @@
 # Docker image for sb-nginx
 
-[![](https://images.microbadger.com/badges/image/bohan/sb-nginx:1.17.7.svg)](https://hub.docker.com/r/bohan/sb-nginx)
+[![](https://dockeri.co/image/bohan/sb-nginx)](https://hub.docker.com/r/bohan/sb-nginx)
 
 ## What's sb-nginx?
 
