@@ -8,8 +8,8 @@ RUN set -ex; \
     apt-get install -y --no-install-recommends ca-certificates gettext-base busybox; \
     busybox wget -O /etc/apt/trusted.gpg.d/sb-nginx.asc "$PACKAGE_REPO/public.key"; \
     echo "deb $PACKAGE_REPO buster main" > /etc/apt/sources.list.d/sb-nginx.list; \
-    printf "Package: nginx*\nPin: version $VERSION-1sb+*\nPin-Priority: 500\n" > /etc/apt/preferences.d/50nginx; \
-    printf "Package: libnginx-*\nPin: version $VERSION-1sb+*\nPin-Priority: 500\n" > /etc/apt/preferences.d/50libnginx; \
+    printf "Package: nginx*\nPin: version $VERSION-1sb+*\nPin-Priority: 510\n" > /etc/apt/preferences.d/50nginx; \
+    printf "Package: libnginx-*\nPin: version $VERSION-1sb+*\nPin-Priority: 510\n" > /etc/apt/preferences.d/50libnginx; \
     apt-get update; \
     apt-get install -y --no-install-recommends nginx; \
     apt-get purge -y --auto-remove busybox; \
