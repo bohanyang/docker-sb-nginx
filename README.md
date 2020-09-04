@@ -1,10 +1,8 @@
-# Docker image for sb-nginx
+# Docker image for [nginx.io](https://nginx.io/)
 
 [![](https://dockeri.co/image/bohan/sb-nginx)](https://hub.docker.com/r/bohan/sb-nginx)
 
-## What's sb-nginx?
-
-[sb-nginx](https://mirrors.xtom.com/sb/nginx/) is a Debian package by [SB Professional Services](https://www.sb/) / [xTom](https://xtom.com/) offering a nginx build supports:
+[nginx.io](https://nginx.io/) (sb-nginx) is a Debian package by [SB Professional Services](https://www.sb/) / [xTom](https://xtom.com/) offering a nginx build supports:
 
  * Brotli compression
  * OpenSSL 1.1.1 with TLS 1.3 support
