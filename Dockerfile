@@ -1,6 +1,6 @@
 FROM debian:buster-slim
 
-ARG VERSION="1.19.8-1sb+111j+buster1"
+ARG VERSION="1.19.8-1sb+111k+buster1"
 ARG PACKAGE_REPO="https://mirrors.xtom.com/sb/nginx"
 
 RUN set -ex; \
