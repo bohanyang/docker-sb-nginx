@@ -1,13 +1,13 @@
-FROM debian:buster-slim
+FROM debian:bullseye-slim
 
-ARG VERSION="1.21.1-1sb+111k+buster1"
-ARG PACKAGE_REPO="https://mirror-cdn.xtom.com/sb/nginx"
+ARG VERSION="1.21.2-1sb+111l+11bullseye1"
+ARG PACKAGE_REPO="https://mirror.xtom.com/sb/nginx"
 
 RUN set -ex; \
     apt-get update; \
     apt-get install -y --no-install-recommends ca-certificates gettext-base wget; \
     wget -O /etc/apt/trusted.gpg.d/sb-nginx.asc "$PACKAGE_REPO/public.key"; \
-    echo "deb $PACKAGE_REPO buster main" > /etc/apt/sources.list.d/sb-nginx.list; \
+    echo "deb $PACKAGE_REPO bullseye main" > /etc/apt/sources.list.d/sb-nginx.list; \
     apt-get update; \
     apt-get install -y --no-install-recommends "nginx=$VERSION"; \
     apt-get purge -y --auto-remove wget; \
