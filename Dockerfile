@@ -1,7 +1,7 @@
 FROM debian:bullseye-slim
 
 ARG VERSION="1.21.2-1sb+111l+11bullseye1"
-ARG PACKAGE_REPO="https://mirror-cdn.xtom.com/sb/nginx"
+ARG PACKAGE_REPO="https://mirror.xtom.com/sb/nginx"
 
 RUN set -ex; \
     apt-get update; \
