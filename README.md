@@ -5,7 +5,7 @@
 [nginx.io](https://nginx.io/) (sb-nginx) is a Debian package by [SB Professional Services](https://www.sb/) / [xTom](https://xtom.com/) offering a nginx build supports:
 
  * Brotli compression
- * OpenSSL 1.1.1 with TLS 1.3 support
+ * OpenSSL 3.0.0 with TLS 1.3 support
  * GeoIP2
 
 ## **Awesome** Usage
