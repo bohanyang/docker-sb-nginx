@@ -1,6 +1,6 @@
 FROM debian:bullseye-slim
 
-ARG VERSION="1.21.2-1sb+111l+11bullseye1"
+ARG VERSION="1.21.3-1sb+300+11bullseye1"
 ARG PACKAGE_REPO="https://mirror.xtom.com/sb/nginx"
 
 RUN set -ex; \
